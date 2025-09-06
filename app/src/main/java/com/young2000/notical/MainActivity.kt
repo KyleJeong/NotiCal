@@ -190,15 +190,17 @@ class MainActivity : AppCompatActivity() {
             CalendarContract.Events.EVENT_LOCATION
         )
         
-        val selection = " = ? AND  > ?"
+        // Corrected selection and sortOrder
+        val selection = "${CalendarContract.Events.CALENDAR_ID} = ? AND ${CalendarContract.Events.DTSTART} > ?"
         val selectionArgs = arrayOf(calendarId.toString(), System.currentTimeMillis().toString())
+        val sortOrder = "${CalendarContract.Events.DTSTART} ASC"
         
         val cursor: Cursor? = contentResolver.query(
             CalendarContract.Events.CONTENT_URI,
             projection,
             selection,
             selectionArgs,
-            " ASC"
+            sortOrder
         )
         
         cursor?.use {

@@ -1,0 +1,23 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.jetbrains.kotlin.android'
+
+android {
+    namespace = "com.young2000.notical" // Replace with your actual namespace
+    compileSdk 36
+    defaultConfig {
+        applicationId "com.young2000.notical"
+        minSdkVersion 21
+        targetSdkVersion 36
+        versionCode 2025090618
+        versionName "0.1.0"
+    }
+dependencies {
+    implementation 'com.google.android.material:material:1.13.0'
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+dependencies {
+    implementation 'androidx.core:core-ktx:1.17.0'
+}
